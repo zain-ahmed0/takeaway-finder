@@ -1,7 +1,7 @@
 - [x] Make sure .slnx file is fine
 - [x] Basic file structure of project is fine
 - [x] Create README
-- [ ] Deploy repo
+- [x] Deploy repo
 - [ ] Add directory.packages.props and package for dotenv
 - [ ] Dependabot
 - [ ] Add Google Map
