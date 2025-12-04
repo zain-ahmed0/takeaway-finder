@@ -2,6 +2,8 @@
 - [x] Basic file structure of project is fine
 - [x] Create README
 - [x] Deploy repo
-- [ ] Add directory.packages.props and package for dotenv
+- [x] Add directory.packages.props
 - [ ] Dependabot
+- [ ] Remove sample code
+- [ ] Add packages - dotenv and json
 - [ ] Add Google Map
