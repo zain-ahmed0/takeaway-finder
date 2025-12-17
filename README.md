@@ -11,12 +11,12 @@
 - `GoogleMapsInterop.cs` - Will bridge JS
 
 ### Services
-- `RestaurantService` - Will contain the API call to the Just Eat API
-- `GoogleMapsService` - Will contain Google Maps logic e.g Add Marker
+- `RestaurantService.cs` - Will contain the API call to the Just Eat API
+- `GoogleMapsService.cs` - Will contain Google Maps logic e.g Add Marker
 
 ### Interfaces
-- `IRestaurantService`
-- `IGoogleMapsService`
+- `IRestaurantService.cs`
+- `IGoogleMapsService.cs`
 
 ### DTOs
 - `TBC`
