@@ -9,8 +9,12 @@
 - [x] Remove sample code
 - [x] Add packages
 - [x] Figure out the best way to handle files
-- [ ] Create Google Maps API Key on GCP and ensure all security measures have been accounted for
-- [ ] Create files for Interop and wwwroot
-- [ ] Add logic for `GoogleMapsInterop.cs` and `googleMapsInterop.js`
-- [ ] Setup GitHub Actions for Environment Variables
-- [ ] Populate FindTakeaway page
+- [x] Create Google Maps API Key on GCP and ensure all security measures have been accounted for
+- [x] Create files for Interop and wwwroot
+- [x] Populate FindTakeaway page
+- [x] Add logic for `GoogleMapsInterop.cs` and `googleMapsInterop.js`
+- [ ] Add docs folder
+- [ ] Review and refactor code that has been added so far
+- [ ] Implementation of Just Eat API
+- [ ] Main feature of entering postcode and markers being added to map
+- [ ] Clean up code

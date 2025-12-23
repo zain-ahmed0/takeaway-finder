@@ -1,9 +1,33 @@
 @page "/find-takeaway"
+@inject GoogleMapsService GoogleMapsService
 
 <PageTitle>Find Takeaway</PageTitle>
 
+<script async src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
+
 <h3>Find Takeaway</h3>
 
-@code {
+<h4>Enter your postcode:</h4>
 
+<div class="input-group row g-3 mb-3">
+    <div class="col-sm-1">
+        <input class="form-control" autocomplete="off" maxlength="8" autofocus placeholder="Postcode" aria-label="Enter postcode to search" type="text">
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary mb-3">Submit</button>
+    </div>
+</div>
+
+<div id="map" style="height: 500px; width: 100%;"></div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await GoogleMapsService.InitMapAsync(51.53721, 0.04687, 12);
+
+            await GoogleMapsService.AddMarkerAsync(51.53721, 0.04687);
+        }
+    }
 }
