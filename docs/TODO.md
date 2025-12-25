@@ -15,10 +15,12 @@
 - [x] Add logic for `GoogleMapsInterop.cs` and `googleMapsInterop.js`
 - [x] Add docs folder and required files
 - [x] Add license and add to GitHub repository
-- [ ] Minimal API project, Test Project, Rename Projects
-- [ ] Work on Minimal API stuff and get it deployed
-- [ ] Fix deployment issues
+- [x] Create Minimal API project
+- [ ] Fix GitHub pages deployment issues
+- [ ] Create Minimal API - Understand what we want from the Just Eat response
+- [ ] Deploy Minimal API
 - [ ] Put logic from FindTakeaway.razor into FindTakeaway.razor.cs
 - [ ] Review and refactor code that has been added so far
 - [ ] Implementation of Just Eat API
 - [ ] Main feature of entering postcode and markers being added to map
+- [ ] Click on marker and view more details
