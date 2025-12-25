@@ -18,8 +18,6 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/TakeawayFinder/TakeawayFinder.csproj" />
-  </Folder>
-  <Folder Name="/tests/">
-    <!-- To be added -->
+    <Project Path="src/TakeawayFinder.Api/TakeawayFinder.Api.csproj" />
   </Folder>
 </Solution>
