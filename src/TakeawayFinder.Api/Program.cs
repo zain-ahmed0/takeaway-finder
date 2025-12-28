@@ -34,4 +34,4 @@ app.MapGet("/{postcode}", async (string postcode) =>
     return Results.Ok(result?.Restaurants);
 }).RequireCors(MyAllowSpecificOrigins);
 
-app.Run("http://localhost:5101");
+app.Run();
