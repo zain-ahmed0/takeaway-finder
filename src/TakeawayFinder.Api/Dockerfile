@@ -7,7 +7,7 @@ EXPOSE 7211
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["TakeawayFinder.Api.csproj", "."]
+COPY ["src/TakeawayFinder.Api/TakeawayFinder.Api.csproj", "."]
 RUN dotnet restore "./TakeawayFinder.Api.csproj"
 COPY . .
 WORKDIR "/src/."
