@@ -9,7 +9,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/TakeawayFinder.Api/TakeawayFinder.Api.csproj", "."]
 RUN dotnet restore "./TakeawayFinder.Api.csproj"
-COPY . .
+COPY ["src/TakeawayFinder.Api/", "."]
 WORKDIR "/src/."
 RUN dotnet build "./TakeawayFinder.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
