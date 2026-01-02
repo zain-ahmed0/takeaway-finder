@@ -1,3 +1,5 @@
+using TakeawayFinder.Models;
+
 namespace TakeawayFinder.Services;
 
 public interface IGoogleMapsService
@@ -8,6 +10,5 @@ public interface IGoogleMapsService
         int zoom);
 
     Task AddMarkerAsync(
-        double latitude,
-        double longitude);
+        List<RestaurantDto> restaurant);
 }

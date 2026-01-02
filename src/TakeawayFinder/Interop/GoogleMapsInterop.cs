@@ -1,4 +1,5 @@
 using Microsoft.JSInterop;
+using TakeawayFinder.Models;
 
 namespace TakeawayFinder.Interop;
 
@@ -24,10 +25,10 @@ public class GoogleMapsInterop : IAsyncDisposable
         await _module.InvokeVoidAsync("initMapAsync", latitude, longitude, zoom);
     }
 
-    public async Task AddMarkerAsync(double latitude, double longitude)
+    public async Task AddMarkerAsync(List<RestaurantDto> restaurant)
     {
         await EnsureModuleAsync();
-        await _module.InvokeVoidAsync("addMarkerAsync", latitude, longitude);
+        await _module.InvokeVoidAsync("addMarkerAsync", restaurant);
     }
 
     public async ValueTask DisposeAsync()

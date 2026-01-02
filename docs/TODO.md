@@ -17,10 +17,11 @@
 - [x] Add license and add to GitHub repository
 - [x] Create Minimal API project
 - [x] Create Minimal API - Understand what we want from the Just Eat response
-- [ ] Deploy Minimal API
-- [ ] Implementation of Just Eat API
-- [ ] Main feature of entering postcode and markers being added to map
-- [ ] Click on marker and view more details
+- [x] Deploy Minimal API
+- [x] Implementation of Just Eat API
+- [x] Main feature of entering postcode and markers being added to map
+- [x] Click on marker and view more details
 - [ ] Fix GitHub pages deployment issues
 - [ ] Put logic from FindTakeaway.razor into FindTakeaway.razor.cs
 - [ ] Review and refactor code that has been added so far
+- [ ] Add Swagger Page

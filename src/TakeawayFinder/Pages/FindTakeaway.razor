@@ -1,4 +1,6 @@
 @page "/find-takeaway"
+
+@using System.Text.Json
 @inject GoogleMapsService GoogleMapsService
 
 <PageTitle>Find Takeaway</PageTitle>
@@ -11,21 +13,36 @@
 
 <div class="input-group row g-3 mb-3">
     <div class="col-sm-1">
-        <input class="form-control" autocomplete="off" maxlength="8" autofocus placeholder="Postcode" aria-label="Enter postcode to search" type="text">
+        <input @bind="submittedPostcode" class="form-control" autocomplete="off" maxlength="8" autofocus placeholder="Postcode" aria-label="Enter postcode to search" type="text">
     </div>
     <div class="col-auto">
-        <button type="button" class="btn btn-primary mb-3">Submit</button>
+        <button @onclick="SubmitPostcode" type="button" class="btn btn-primary mb-3">Submit</button>
     </div>
 </div>
 
 <div id="map" style="height: 500px; width: 100%;"></div>
 
 @code {
+    public static string? submittedPostcode = string.Empty;
+    
+    private static string? postcode = string.Empty;
+    
     static HttpClient client = new HttpClient();
+    
+    private void SubmitPostcode()
+    {
+        postcode = submittedPostcode;
+
+        GetData();
+
+        SerializeData();
+
+        submittedPostcode = string.Empty;
+    }
     
     private static async Task<String> GetData()
     {
-        using HttpResponseMessage response = await client.GetAsync("http://localhost:5101");
+        using HttpResponseMessage response = await client.GetAsync($"https://takeaway-finder.onrender.com/{postcode}");
         
         string responseBody = await response.Content.ReadAsStringAsync();
 
@@ -36,14 +53,23 @@
     {
         if (firstRender)
         {
-            await GoogleMapsService.InitMapAsync(51.53721, 0.04687, 12);
-
-            await GoogleMapsService.AddMarkerAsync(51.53721, 0.04687);
-
-            string data = await GetData();
-            
-            Console.WriteLine(data);
+            await GoogleMapsService.InitMapAsync(51.53721, 0.04687, 10);
         }
     }
     
+    private async Task SerializeData()
+    {
+        string data = await GetData();
+            
+        var result = JsonSerializer.Deserialize<List<RestaurantDto>>(
+            data,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            
+        // foreach (var restaurant in result)
+        // {
+        //     await GoogleMapsService.AddMarkerAsync(restaurant.Address.Latitude, restaurant.Address.Longitude, restaurant.Name, restaurant.Url);
+        // }
+
+        await GoogleMapsService.AddMarkerAsync(result);
+    }
 }
